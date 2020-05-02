@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $DOCKER_TAG == "latest" ]
+then
+    echo -e "building image using port: $PORT"
+    docker build --build-arg PORT=$PORT -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+else
+    echo -e "building image using port: $PORT_TEST"
+    docker build --build-arg PORT=$PORT_TEST -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+fi
