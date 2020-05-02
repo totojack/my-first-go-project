@@ -1,10 +1,16 @@
 FROM golang:1.14.2-alpine AS builder
 
 # Set necessary environmet variables needed for our image
-ENV GO111MODULE=on \
-    CGO_ENABLED=0 \
-    GOOS=linux \
-    GOARCH=amd64
+ENV GO111MODULE on
+ENV CGO_ENABLED 0
+ENV GOOS linux
+ENV GOARCH amd64
+
+# Add args
+ARG PROJ_ENV=production
+ENV PROJ_ENV ${PROJ_ENV}
+ARG PORT=3000
+ENV PORT ${PORT}
 
 # Move to working directory /build
 WORKDIR /build
