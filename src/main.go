@@ -11,3 +11,7 @@ func main() {
 	})
 	r.Run(":3000")
 }
+
+func add(num1 int, num2 int) int {
+    return num1 + num2
+}
