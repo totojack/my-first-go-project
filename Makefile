@@ -7,7 +7,7 @@ push:
 	docker push ${DOCKER_REPO}:latest
 
 buildtest:
-	docker-compose -f docker-compose.test.yml build sut
+	docker-compose -f docker-compose.test.yml build --no-cache sut
 
 runtest:
 	docker-compose -f docker-compose.test.yml run --rm sut

@@ -4,4 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_test
-    #command: go test -v -run TestSub
+    #command: go test -v
+    depends_on:
+      - myfirstgoproject
+  myfirstgoproject:
+    image: lucaiovio/myfirstgoproject:latest
+    
